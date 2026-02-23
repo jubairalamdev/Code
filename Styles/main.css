@@ -1,0 +1,46 @@
+:root {
+    --theme-black: #002C5C;
+    --theme-dark-gray: #323B49;
+    --theme-gray: #64748B;
+    --theme-primary: #3B82F6;
+    --theme-green: #10B981;
+    --theme-red: #EF4444;
+    --theme-white: #FFFFFF;
+    --theme-stroke: #F1F2F4;
+}
+
+.theme-black {
+    color: var(--theme-black);
+}
+
+.theme-dark {
+    color: var(--theme-dark-gray);
+}
+
+.theme-gray {
+    color: var(--theme-gray);
+}
+
+.theme-primary {
+    color: var(--theme-primary);
+}
+
+.theme-green {
+    color: var(--theme-green);
+}
+
+.theme-red {
+    color: var(--theme-red);
+}
+
+.theme-white {
+    color: var(--theme-white);
+}
+
+.theme-stroke {
+    color: var(--theme-stroke);
+}
+
+body {
+    background-color: #F8FAFC;
+}
