@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobs Tracker</title>
 
     <!-- Loaded Fonts -->
-    <style>
+    <!-- <style>
         @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
         * {
             font-family: "Geist", sans-serif;
         }
-    </style>
+    </style> -->
 
     <!-- Daisy Ui CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
 
     <!-- Other used CSS -->
     <link rel="stylesheet" href="Styles/main.css">
 </head>
-<body>
+
+<body class="bg-base-300 min-h-screen">
 
     <header class="container mx-auto pt-[60px] px-4 md:px-0">
         <h2 class="theme-black text-[26px] md:text-[36px] font-bold mb-5 ">Job Application Tracker</h2>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="grid grid-cols-3 gap-4 max-[400px]:grid-cols-1">
             <div class="card card-border bg-base-100">
                 <div class="card-body">
                     <h2 class="card-title text-[14px] theme-dark">Total</h2>
-                    <h2 class="text-2xl font-extrabold theme-black">8</h2>
+                    <h2 class="text-2xl font-extrabold theme-black" id="totalJobsCountTag">8</h2>
                 </div>
             </div>
             <div class="card card-border bg-base-100">
                 <div class="card-body">
                     <h2 class="card-title text-[14px] theme-dark">Interview</h2>
-                    <h2 class="text-2xl font-extrabold theme-green">8</h2>
+                    <h2 class="text-2xl font-extrabold theme-green" id="interviewJobsTag">0</h2>
                 </div>
             </div>
             <div class="card card-border bg-base-100">
                 <div class="card-body">
                     <h2 class="card-title text-[14px] theme-dark">Rejected</h2>
-                    <h2 class="text-2xl font-extrabold theme-red">8</h2>
+                    <h2 class="text-2xl font-extrabold theme-red" id="rejectedJobsTag">0</h2>
                 </div>
             </div>
         </div>
@@ -50,172 +53,37 @@
     </header>
 
     <!-- This is Jobs Section -->
-    <section class="container mx-auto px-4 md:px-0">
+    <section class="container mx-auto px-4 md:px-0 pb-10" id="job-master-container">
         <div class="flex justify-between pb-6">
             <h3 class="font-bold theme-black text-xl">Available Jobs</h3>
-            <p class="theme-gray text-[16px]">8 jobs</p>
+            <p class="theme-gray text-[16px]" id="totalJobsCountSmallTag">8 jobs</p>
         </div>
 
         <!-- Filter Jobs Buttons -->
         <ul class="flex gap-2 pb-4">
-            <li><a class="btn bg-base-100 text-sm theme-gray min-w-[80px]">All</a></li>
-            <li><a class="btn bg-base-100 text-sm theme-gray min-w-[80px]">Interview</a></li>
-            <li><a class="btn bg-base-100 text-sm theme-gray min-w-[80px]">Rejected</a></li>
+            <li><a class="btn  text-sm  min-w-[80px] filterBtn theme-white bg-primary"
+                    onclick="toggleFilterBtn('allFilterBtn')" id="allFilterBtn">All</a></li>
+            <li><a class="btn bg-base-100 text-sm theme-gray min-w-[80px] filterBtn"
+                    onclick="toggleFilterBtn('interviewFilterBtn')" id="interviewFilterBtn">Interview</a></li>
+            <li><a class="btn bg-base-100 text-sm theme-gray min-w-[80px] filterBtn"
+                    onclick="toggleFilterBtn('rejectedFilterBtn')" id="rejectedFilterBtn">Rejected</a></li>
         </ul>
 
-        <!-- Jobs Container here -->
-        <section class="space-y-4">
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-
-
-
-            <div class="job p-6 bg-base-100 rounded-lg border-2 border-gray-200">
-                <h3 class="text-xl font-bold theme-black">Mobile First Corp</h3>
-                <p class="text-lg theme-gray">React Native Developer</p>
-                <p class="text-[16px] theme-gray my-5">Remote ⋅ Full-Time ⋅ $130,000 - $175,000</p>
-                <p class="badge bg-blue-100/70 p-5 text-lg theme-black font-semibold">NOT APPLIED</p>
-                <p class="text-[16px] theme-gray mt-3 mb-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                <div class="space-x-2 space-y-2">
-                    <button class="btn btn-outline btn-success text-lg">
-                        INTERVIEW
-                    </button>
-                    <button class="btn btn-outline btn-error text-lg">
-                        REJECTED
-                    </button>
-                </div>
-            </div>
-        
+        <!-- available Jobs Container here -->
+        <section class="space-y-4" id="jobs-available-container">
         </section>
 
-    </section>
+        <!-- applied Container here -->
+        <section class="space-y-4" id="jobs-interview-container">
+        </section>
 
+        <!-- rejected Container here -->
+        <section class="space-y-4" id="jobs-rejected-container">
+        </section>
+        <!-- Main all functional JS -->
+        <script src="Scripts/main.js"></script>
+        <!-- <script src="Scripts/test.js"></script> -->
 
 </body>
+
 </html>
