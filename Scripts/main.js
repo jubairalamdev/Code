@@ -152,7 +152,9 @@ const loadAvailableJobs = () => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">Del</button>
+                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
+                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    </button>
                 </div>`
         }
     }
@@ -198,7 +200,9 @@ const justLoadUi = tab => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">Del</button>
+                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
+                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    </button>
                 </div>`
             }
         }
@@ -235,7 +239,9 @@ const justLoadUi = tab => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">Del</button>
+                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
+                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    </button>
                 </div>`
             }
         }
