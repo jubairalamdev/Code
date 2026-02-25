@@ -1,0 +1,34 @@
+-------------------- Ans to The Question No. 1 ------------------------
+
+The main Difference Between getElementById, getElementsByClassName, and querySelector / querySelectorAll is how it Selects and finds an HTML Element. The Difference between each methods is given below:
+
+-> getElementById: It finds only one id that can be matched with any element in the whole HTML Document Object Model. Then it returns the element. But if there's 2 Element with same id, it doesn't catch second element and only returns first element directly.
+-> getElementsByClassName: This Method finds all the elements that match the given className and returns all the element in an HTML Collection Array.
+-> querySelector: This method is used to find more than a element with className, ids and tags. As it can select Multiple elements so it also Returns a NodeList in an Array as an Array of Elements found. But this method only gets the first matched element that has same class or id or tagName.
+-> querySelectorAll: This method is used to find all matched elements with the given ClassName, TagName and Id. It also returns a NodeList as it returns Multiple Elements.
+
+-------------------- Ans to The Question No. 2 ------------------------
+
+I create and insert an Element into a DOM like this:
+
+const parent = document.getElementById("parentId");
+const newChild = document.document.createElement("p");
+newChild.innerText = "I am a new child";
+parent.appendChild(newChild);
+
+First, I selected the parent container with getElementById using it's container where i want to create new element. Then, I created a new element with paragraph tag. Next I added a Dummy Text to the new Element. And Lastly, I gave the new Element to the parent container using appendChild() method.
+
+-------------------- Ans to The Question No. 3 ------------------------
+
+Event Bubbling is a process that happens in Javascript when we are doing any event using any kinds of Input Device. If we set two same events using addEventListener to a parent and it's child Container, then the Even bubbling is noticed. If we have used Click Event then when we click the child container, the click event is also listened by the parent Container. When we click into a child Container, this is how the event is listened by the upper/parent container, like it goes up listening like a bubble. This Situation is called Event Bubbling.
+
+-------------------- Ans to The Question No. 4 ------------------------
+
+Event delegation is a way to handle events by adding a single listener to a parent element instead of using listener in every individual child. It works with event bubbling. When a click on a button happens it goes up like bubbles to its parents. When found the event at the parent we use event.target to identify the child that was clicked. This is mainly used for Memory saving.
+
+-------------------- Ans to The Question No. 5 ------------------------
+
+stopPropagation() and preventDefault() both methods stops something from happening. But they work differently. Here's how they work:
+
+-> preventDefault() is used to cancel the usual browser action, like stopping a link from opening or a form refreshing the screen when I hit submit in the form. 
+-> stopPropagation() is for event bubble; it prevents any event from going up to parent elements, ensuring that a click event on a button don't do a click handler on the container behind it. 
