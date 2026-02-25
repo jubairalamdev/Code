@@ -152,8 +152,8 @@ const loadAvailableJobs = () => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
-                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    <button class="btn theme-white py-2 px-3 bg-base-200 absolute right-3 top-3 deleteJob rounded-full" id="deleteJob">
+                        <img src="./Assests/delete.png" alt="deleteBtn" >
                     </button>
                 </div>`
         }
@@ -200,8 +200,8 @@ const justLoadUi = tab => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
-                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    <button class="btn  theme-white py-2 px-3 bg-base-200 absolute right-3 top-3 deleteJob  rounded-full" id="deleteJob rounded-full">
+                        <img src="./Assests/delete.png" alt="deleteBtn" >
                     </button>
                 </div>`
             }
@@ -239,8 +239,8 @@ const justLoadUi = tab => {
                             REJECTED
                         </button>
                     </div>
-                    <button class="btn btn-error theme-white px-2 py-1 absolute right-3 top-3 deleteJob" id="deleteJob">
-                        <img src="./Assets/delete.png" alt="deleteBtn" >
+                    <button class="btn theme-white py-2 px-3 bg-base-200 absolute right-3 top-3 deleteJob  rounded-full" id="deleteJob rounded-full">
+                        <img src="./Assests/delete.png" alt="deleteBtn" >
                     </button>
                 </div>`
             }
